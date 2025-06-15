@@ -7,7 +7,7 @@ searchButton.addEventListener("click", () => {
     if(searchTerm){
         searchMovies(searchTerm);
     }
-})
+});
 
 const apiKey = "http://www.omdbapi.com/?i=tt3896198&apikey=68303dc9";
 
@@ -16,7 +16,9 @@ function searchMovies(query){
 
     fetch(url)
         .then(res => res.json())
-        .then(data => {displayMovies(data.Search);})
+        .then(data => {
+            displayMovies(data.Search);
+        })
         .catch(err => {
             console.error("API Error", err);
             resultsContainer.innerHTML = "<p class='text-red-500'>Something went wrong. Please try again.</p>";
