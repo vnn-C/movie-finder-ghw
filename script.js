@@ -1,6 +1,6 @@
-const searchInput = document.querySelector("searchInput");
-const searchButton = ducument.querySelector("searchButton");
-const resultsContainer = document.querySelector("results");
+const searchInput = document.querySelector("#searchInput");
+const searchButton = ducument.querySelector("#searchButton");
+const resultsContainer = document.querySelector("#results");
 
 searchButton.addEventListener("click", () => {
     const searchTerm = searchInput.ariaValueMax.trim();
