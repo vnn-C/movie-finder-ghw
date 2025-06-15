@@ -10,9 +10,10 @@ searchButton.addEventListener("click", () => {
 })
 
 const apiKey = "http://www.omdbapi.com/?i=tt3896198&apikey=68303dc9";
-​​const url = `https://www.omdbapi.com/?s=${encodeURIComponent(query)}&apikey=${apiKey}`;
 
 function searchMovies(query){
+    ​​const url = `https://www.omdbapi.com/?s=${encodeURIComponent(query)}&apikey=${apiKey}`;
+
     fetch(url)
         .then(res => res.json())
         .then(data => {displayMovies(data.Search);})
