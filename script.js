@@ -37,7 +37,7 @@ function displayMovies(movies){
         const movieCard = document.createElement("div");
         movieCard.className = "bg-white rounded shadow p-4 text-left"; 
         
-        movieCard.innerHTML = ` <h2 class="text-xl font-semibold">${movie.Title}</h2> <p><strong>Year:</strong> ${movie.Year}</p> <img src="${movie.Poster !== "N/A" ? movie.Poster : "https://via.placeholder.com/150"}" alt="Poster for ${movie.Title}" class="mt-2 max-w-xs"> `;
+        movieCard.innerHTML = '<h2 class="text-xl font-semibold">${movie.Title}</h2> <p><strong>Year:</strong> ${movie.Year}</p> <img src="${movie.Poster !== "N/A" ? movie.Poster : "https://via.placeholder.com/150"}" alt="Poster for ${movie.Title}" class="mt-2 max-w-xs">';
         resultsContainer.append(movieCard);
     })
 }
