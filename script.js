@@ -1,9 +1,9 @@
 const searchInput = document.querySelector("#searchInput");
-const searchButton = ducument.querySelector("#searchButton");
+const searchButton = document.querySelector("#searchButton");
 const resultsContainer = document.querySelector("#results");
 
 searchButton.addEventListener("click", () => {
-    const searchTerm = searchInput.ariaValueMax.trim();
+    const searchTerm = searchInput.value.trim();
     if(searchTerm){
         searchMovies(searchTerm);
     }
@@ -12,7 +12,7 @@ searchButton.addEventListener("click", () => {
 const apiKey = "68303dc9";
 
 function searchMovies(query){
-    ​​const url = `https://www.omdbapi.com/?s=${encodeURIComponent(query)}&apikey=${apiKey}`;
+    const url = `https://www.omdbapi.com/?s=${encodeURIComponent(query)}&apikey=${apiKey}`;
 
     fetch(url)
         .then(res => res.json())
@@ -33,11 +33,11 @@ function displayMovies(movies){
 
     resultsContainer.innerHTML = "";
 
-    movies.foreach(movie => {
-        const movieCard = document.createElement("div")
+    movies.forEach(movie => {
+        const movieCard = document.createElement("div");
         movieCard.className = "bg-white rounded shadow p-4 text-left"; 
         
-        ​​movieCard.innerHTML = ` <h2 class="text-xl font-semibold">${movie.Title}</h2> <p><strong>Year:</strong> ${movie.Year}</p> <img src="${movie.Poster !== "N/A" ? movie.Poster : "https://via.placeholder.com/150"}" alt="Poster for ${movie.Title}" class="mt-2 max-w-xs"> `;
-        resultsContainer.append(movieCard)
+        movieCard.innerHTML = ` <h2 class="text-xl font-semibold">${movie.Title}</h2> <p><strong>Year:</strong> ${movie.Year}</p> <img src="${movie.Poster !== "N/A" ? movie.Poster : "https://via.placeholder.com/150"}" alt="Poster for ${movie.Title}" class="mt-2 max-w-xs"> `;
+        resultsContainer.append(movieCard);
     })
 }
